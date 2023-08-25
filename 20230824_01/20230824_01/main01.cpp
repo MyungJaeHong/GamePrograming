@@ -27,7 +27,7 @@ struct BingGoBoard {
 
 	void Release()
 	{
-		delete _bingGo;
+		delete[] _bingGo;
 	}
 
 	void ShuffleBingGoBoard()

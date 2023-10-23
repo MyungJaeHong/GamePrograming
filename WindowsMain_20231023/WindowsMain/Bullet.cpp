@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Bullet.h"
+#include "Collider.h"
 
 void Bullet::Init()
 {
@@ -42,4 +43,18 @@ void Bullet::SetBulletInfo(Vector2 direction, float speed, Vector2 spawnPos)
 	_speed = speed;
 	_body = Rect::MakeCenterRect(spawnPos.x, spawnPos.y, 50, 50);
 	this->SetSprite(L"../Resources/mjh_fireball.png", _body);
+}
+
+void Bullet::OnComponentBeginOverlap(Collider* collider, Collider* other)
+{
+	if (other->GetOwner()->GetName() == "Monster")
+	{
+		other->GetOwner()->SetActive(false);
+		SetActive(false);
+		//GET_SINGLE(SceneManager)->GetCurrentScene()->DespawnActor(other->GetOwner());
+	}
+}
+
+void Bullet::OnComponentEndOverlap(Collider* collider, Collider* other)
+{
 }

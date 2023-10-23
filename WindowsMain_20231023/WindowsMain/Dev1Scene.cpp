@@ -11,7 +11,7 @@ void Dev1Scene::Init()
 {
 	SpriteActor* backgroundActor = new SpriteActor();
 	backgroundActor->Init();
-	backgroundActor->SetSprite(L"../Resources/background.jpg", Rect::MakeCenterRect(WIN_SIZE_WIDTH / 2, WIN_SIZE_HEIGHT / 2, WIN_SIZE_WIDTH, WIN_SIZE_HEIGHT));
+	backgroundActor->SetSprite(L"../Resources/mjh_background.png", Rect::MakeCenterRect(WIN_SIZE_WIDTH / 2, WIN_SIZE_HEIGHT / 2, WIN_SIZE_WIDTH, WIN_SIZE_HEIGHT));
 	this->SpawnActor(backgroundActor);
 
 	//Colldier* c = new Collider()

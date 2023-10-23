@@ -25,8 +25,11 @@ void Monster::Update()
 
 	Vector2 targetVector = GET_SINGLE(TargetingManager)->GetTargetVector();
 
+	float distance = sqrt(fabs(targetVector.x - _body.x) * fabs(targetVector.x - _body.x) + fabs(targetVector.y - _body.y) * fabs(targetVector.y - _body.y));
+
 	targetVector.x -= _body.x;
 	targetVector.y -= _body.y;
+
 	
 	targetVector.Normalize();
 
@@ -35,7 +38,7 @@ void Monster::Update()
 
 	Vector2 direction = {};
 
-	if (cos(PI / 6) < dotProduct)
+	if (cos(PI / 6) < dotProduct && distance < 3.0f)
 	{
 		direction = targetVector;
 	}

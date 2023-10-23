@@ -85,6 +85,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char* lpszCmd
 	// GetMessage  => 윈도우 이벤트가 왔을떄만 작동
 	// PeekMessage => 윈도우 이벤트가 안와도 작동
 	
+	srand(time(NULL));
+
 	game.Init();
 
 	while (true)

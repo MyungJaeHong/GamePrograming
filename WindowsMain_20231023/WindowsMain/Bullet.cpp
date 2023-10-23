@@ -40,6 +40,6 @@ void Bullet::SetBulletInfo(Vector2 direction, float speed, Vector2 spawnPos)
 {
 	_direction = direction;
 	_speed = speed;
-	_body = Rect::MakeCenterRect(spawnPos.x, spawnPos.y, 100, 100);
-	this->SetSprite(L"../Resources/Power Ups/Power Up.png", _body);
+	_body = Rect::MakeCenterRect(spawnPos.x, spawnPos.y, 50, 50);
+	this->SetSprite(L"../Resources/mjh_fireball.png", _body);
 }

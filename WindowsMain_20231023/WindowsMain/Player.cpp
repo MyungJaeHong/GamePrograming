@@ -46,14 +46,13 @@ void Player::Update()
 	{
 		direction = direction + Vector2(1, 0);
 	}
-	/*
 	if (GET_SINGLE(KeyManager)->GetKeyDown(VK_SPACE))
 	{
 		Bullet* playerBullet = new Bullet();
 		Vector2 dircetion;
-		dircetion.x = 0;
-		dircetion.y = -1;
-		playerBullet->SetBulletInfo(dircetion, 800, Vector2(_body.x, _body.y));
+		dircetion.x = _mousePos.x - _body.x;
+		dircetion.y = _mousePos.y - _body.y;
+		playerBullet->SetBulletInfo(dircetion, 500, Vector2(_body.x, _body.y));
 		{
 			BoxCollider* collider = new BoxCollider();
 			collider->SetCollision(Rect::MakeCenterRect(0, 0, 40, 40));
@@ -62,7 +61,6 @@ void Player::Update()
 		playerBullet->Init();
 		GET_SINGLE(SceneManager)->GetCurrentScene()->SpawnActor(playerBullet);
 	}
-	*/
 
 	direction.Normalize();
 	this->Move(direction);

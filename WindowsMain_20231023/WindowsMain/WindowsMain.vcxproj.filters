@@ -101,9 +101,6 @@
     <ClCompile Include="Monster.cpp">
       <Filter>소스 파일\03.Object\Game</Filter>
     </ClCompile>
-    <ClCompile Include="TargetingManager.cpp">
-      <Filter>소스 파일\01.Manager</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -177,9 +174,6 @@
     </ClInclude>
     <ClInclude Include="Monster.h">
       <Filter>소스 파일\03.Object\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="TargetingManager.h">
-      <Filter>소스 파일\01.Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

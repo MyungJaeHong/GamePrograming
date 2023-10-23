@@ -1,18 +1,21 @@
 #pragma once
 #include "SpriteActor.h"
+class Actor;
 class Monster : public SpriteActor
 {
 private:
+	Vector2 _direction;
+	Vector2 _originDirection;
 	float _speed;
-	Vector2 _forwardVector = { 0 , 1 };
-	Vector2 _targetVector = {};
-	float _viewingDirection;
+	float _trackingRadian;
+	Vector2 _originPos;
 
+	Actor* _targetActor = nullptr;
 public:
 	void Move(Vector2 direction);
-	void SetTargetVector(Vector2 targetVector);
-public: 
-	void SetMonsterInfo(CenterRect body, float speed, const WCHAR* spritePath);
+	void SetMonsterInfo(float trackingRadian, float speed, Vector2 spawnPos, Vector2 direction);
+	void SetTargetActor(Actor* targetActor) { _targetActor = targetActor; }
+	bool IsInTrackingRange();
 public:
 	using Super = SpriteActor;
 public:

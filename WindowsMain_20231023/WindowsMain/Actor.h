@@ -10,6 +10,7 @@ class Actor
 protected:
 	vector<Component*> _components;
 	CenterRect _body = {};	//Draw 영역 (가운데가 Actor Position)
+	float _roationRadian = 0.0f;
 	string _name;
 
 	bool _isActive = true;

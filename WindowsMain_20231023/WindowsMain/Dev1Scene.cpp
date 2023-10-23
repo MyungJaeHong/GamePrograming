@@ -26,6 +26,7 @@ void Dev1Scene::Init()
 			player->AddComponent(collider);
 		}
 		this->SpawnActor(player);
+		_playerActor = player;
 	}
 
 	/*
@@ -67,7 +68,8 @@ void Dev1Scene::Update()
 		if (_monsterSpawnTime > 3.0f)
 		{
 			Monster* monster = new Monster();
-			monster->SetMonsterInfo(Rect::MakeCenterRect(Random::GetInt(0, WIN_SIZE_WIDTH), Random::GetInt(0, WIN_SIZE_HEIGHT), 80, 80), 100, L"../Resources/mjh_monster.png");
+			monster->SetMonsterInfo(PI / 3.0, 50, Vector2(RandomWidth, RandomHeight), Vector2::Down());
+			monster->SetTargetActor(_playerActor);
 			{
 				//컴포넌트 추가
 				BoxCollider* collider = new BoxCollider();

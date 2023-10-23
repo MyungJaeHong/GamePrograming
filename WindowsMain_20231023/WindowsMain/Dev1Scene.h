@@ -14,5 +14,6 @@ public:
 
 private:
 	float _monsterSpawnTime = 0;
+	Actor* _playerActor = nullptr;
 };
 

@@ -27,9 +27,9 @@
 //using namespace Gdiplus;
 
 
+#include "Defines.h"
 #include "Types.h"
 #include "Enums.h"
-#include "Defines.h"
 
 //내가만든 Common 헤더 파일
 #include "CommonStruct.h"
@@ -40,7 +40,6 @@
 #include "TimeManager.h"
 #include "SceneManager.h"
 #include "CollisionManager.h"
-#include "TargetingManager.h"
 
 //===========================================
 //    ## 네임스페이스 ##

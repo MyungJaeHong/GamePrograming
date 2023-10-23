@@ -40,7 +40,23 @@ void SpriteActor::Render(HDC hdc)
 		// 5. ★★ 고속복사 BitBlt를 사용한 그리기
 		//  ==> 고속복사라서 PNG는안돼요. (BMP밖에 사용불가능) (BMP은 이미지에 투명도가 불가능함)
 
-		g->DrawImage(_sprite, _body.ToGdiRect());
+		if (false == (abs(_roationRadian) < EPSILON))
+		{
+			{
+				Gdiplus::Matrix matrix;
+				matrix.RotateAt(Rad2Deg(_roationRadian), Gdiplus::PointF(_body.x, _body.y));
+				g->SetTransform(&matrix);
+			}
+			g->DrawImage(_sprite, _body.ToGdiRect());
+			{
+				Gdiplus::Matrix matrix;
+				g->SetTransform(&matrix);
+			}
+		}
+		else
+		{
+			g->DrawImage(_sprite, _body.ToGdiRect());
+		}
 	}
 
 	//부모클래스 기본적인 처리

@@ -20,11 +20,16 @@ CenterRect CenterRect::FromRect(RECT rect)
 {
 	CenterRect centerRect = {};
 	centerRect.x = static_cast<float>((rect.left + rect.right) / 2);
-		// rect.left + (rect.right - rect.left) / 2;
+	// rect.left + (rect.right - rect.left) / 2;
 	centerRect.y = static_cast<float>((rect.top + rect.bottom) / 2);
-		// rect.top + (rect.bottom -rect.top) / 2;
+	// rect.top + (rect.bottom -rect.top) / 2;
 	centerRect.width = static_cast<float>(rect.right - rect.left);
 	centerRect.height = static_cast<float>(rect.bottom - rect.top);
 
 	return centerRect;
+}
+
+Vector2 CenterRect::Position()
+{
+	return Vector2(x, y);
 }

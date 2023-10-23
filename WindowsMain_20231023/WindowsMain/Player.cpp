@@ -92,7 +92,6 @@ void Player::Move(Vector2 direction)
 	direction.Normalize();
 	this->_body.x += direction.x * _speed * DeltaTime;
 	this->_body.y += direction.y * _speed * DeltaTime;
-	GET_SINGLE(TargetingManager)->SetTargetVector(_body.x, _body.y);
 }
 
 void Player::SetPlayerInfo(CenterRect body, float speed, const WCHAR * spritePath)
